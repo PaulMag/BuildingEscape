@@ -18,9 +18,8 @@ UOpenDoor::UOpenDoor()
 void UOpenDoor::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	//FString objectPos = GetOwner()->GetTransform().GetRotation();
-	
+
+	actorThatOpens = GetWorld()->GetFirstPlayerController()->GetPawn();
 }
 
 void UOpenDoor::openDoor()
@@ -41,6 +40,5 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	{
 		openDoor();
 	}
-	//openDoor();
 }
 
