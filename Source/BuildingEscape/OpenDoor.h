@@ -24,14 +24,23 @@ protected:
 	virtual void BeginPlay() override;
 
 	void openDoor();
+	void closeDoor();
 
 private:
-	UPROPERTY(VisibleAnywhere)
-	float openAngle = 90.0f;
+	AActor * owner;
+
+	UPROPERTY(EditAnywhere)
+	float openAngle = 20.0;
+	UPROPERTY(EditAnywhere)
+	float closeAngle = 90.0;
 	
 	UPROPERTY(EditAnywhere)
 	ATriggerVolume* pressurePlate;
 	
+	UPROPERTY(EditAnywhere)
+	float doorCloseDelay = 0.1;
+	float lastDoorOpenTime;
+
 	//UPROPERTY(EditAnywhere)
 	AActor* actorThatOpens;
 };
