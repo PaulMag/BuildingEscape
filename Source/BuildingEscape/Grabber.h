@@ -30,6 +30,7 @@ protected:
 	virtual void BeginPlay() override;
 	// Ray-cast and grab what's in reach
 	void grab();
+	void grabRelease();
 
 public:	
 	// Called every frame

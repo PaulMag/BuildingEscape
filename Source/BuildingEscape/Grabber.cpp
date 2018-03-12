@@ -31,6 +31,7 @@ void UGrabber::BeginPlay()
 	if (inputComponent)
 	{
 		inputComponent->BindAction("Grab", IE_Pressed, this, &UGrabber::grab);
+		inputComponent->BindAction("Grab", IE_Released, this, &UGrabber::grabRelease);
 	}
 	else
 	{
@@ -41,6 +42,10 @@ void UGrabber::BeginPlay()
 void UGrabber::grab()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Grab key pressed."));
+}
+void UGrabber::grabRelease()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Grab key released."));
 }
 
 
