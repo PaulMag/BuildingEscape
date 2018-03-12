@@ -3,6 +3,9 @@
 #pragma once
 
 #include "DrawDebugHelpers.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "Components/InputComponent.h"
+
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "Grabber.generated.h"
@@ -15,6 +18,8 @@ class BUILDINGESCAPE_API UGrabber : public UActorComponent
 
 private:
 	float reach = 100.;  // range of grabber
+	UPhysicsHandleComponent* physicsHandle = nullptr;
+	UInputComponent* inputComponent = nullptr;
 
 public:	
 	// Sets default values for this component's properties
@@ -23,6 +28,8 @@ public:
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+	// Ray-cast and grab what's in reach
+	void grab();
 
 public:	
 	// Called every frame
