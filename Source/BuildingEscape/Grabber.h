@@ -31,6 +31,8 @@ protected:
 	void grab();
 	void grabRelease();
 	FHitResult getFirstPhysicsBodyInReach() const;
+	FVector getReachLineStart() const;
+	FVector getReachLineEnd() const;
 
 public:	
 	UGrabber();
